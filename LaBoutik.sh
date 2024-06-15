@@ -31,7 +31,7 @@ apt-get install git -y
 #Git Clone
 echo "----- clonage du depot"
 
-git clone --branch Mike-sh --single-branch https://github.com/samijuju/installRaspberry.git
+git clone --branch Mike-sh --single-branch https://github.com/Heraes/installRaspberry.git
 
 # copie de tous les fichiers ds /home/sysop
 cp -r /home/sysop/installRaspberry/* /home/sysop/
@@ -164,6 +164,9 @@ npm install
 
 echo "----- Maj .chromium_env"
 cp /home/sysop/serveurNfcNodeJs/chromium_env.exemple /home/sysop/serveurNfcNodeJs/.chromium_env
+chgrp sysop /home/sysop/serveurNfcNodeJs/.chromium_env
+chmod 774 /home/sysop/serveurNfcNodeJs/.chromium_env
+
 echo "Maj .chromium_env"
 sed -i "/^hostname = */c hostname = $hostname" /home/sysop/serveurNfcNodeJs/.chromium_env
 sed -i "/^front_type = */c front_type = $frontType" /home/sysop/serveurNfcNodeJs/.chromium_env
